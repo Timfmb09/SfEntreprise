@@ -45,7 +45,7 @@ class Entreprise
     private $ville;
 
     /**
-     * @ORM\OneToMany(targetEntity=employe::class, mappedBy="entreprise", orphanRemoval=true)
+     * @ORM\OneToMany(targetEntity=Employe::class, mappedBy="entreprise", orphanRemoval=true)
      */
     private $employes;
 
@@ -127,7 +127,7 @@ class Entreprise
         return $this->employes;
     }
 
-    public function addEmploye(employe $employe): self
+    public function addEmploye(Employe $employe): self
     {
         if (!$this->employes->contains($employe)) {
             $this->employes[] = $employe;
@@ -137,7 +137,7 @@ class Entreprise
         return $this;
     }
 
-    public function removeEmploye(employe $employe): self
+    public function removeEmploye(Employe $employe): self
     {
         if ($this->employes->removeElement($employe)) {
             // set the owning side to null (unless already changed)
@@ -147,5 +147,10 @@ class Entreprise
         }
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->raisonSociale;
     }
 }

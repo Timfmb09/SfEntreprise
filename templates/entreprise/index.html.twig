@@ -6,7 +6,12 @@
     <h1>Liste des entreprises</h1>
 
     {% for entreprise in entreprises %}
-        {{ entreprise.raisonSociale }} <br>
+        {# {{ entreprise.raisonSociale ~ '('~ entreprise.cp ~' '~ entreprise.ville ~')' }} 
+        <br> #}
+
+        {# {{ entreprise.raisonSociale}} {{entreprise.cp}} {{ entreprise.ville}} <br> #}
+
+        {{ entreprise }} <br>
     {% endfor %}
 
 {% endblock %}
