@@ -124,4 +124,10 @@ class Employe
 
         return $this;
     }
+
+    public function __ToString()
+    {
+        return $this->prenom." ".$this->nom;
+    }
+
 }

@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Employe;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -15,9 +16,10 @@ class EmployeController extends AbstractController
     public function index(ManagerRegistry $doctrine): Response
     {
         // récupérer toutes les entreprises de la BDD
-        $employes = $doctrine->getRepository(Entreprise::class)->findAll();
-        return $this->render('entreprise/index.html.twig', [
-           'entreprises' =>$entreprises
+        //SELECT * FROM employe WHERE ville = "Strasbourg" ORDER BY nom ASC
+        $employes = $doctrine->getRepository(Employe::class)->findBy([], ["nom" => "ASC"]);
+        return $this->render('employe/index.html.twig', [
+           'employes' =>$employes
         ]);
     }
 }
