@@ -107,6 +107,10 @@ class __TwigTemplate_cf1757ba0b5cc159f78e4d3b3cba1286db5317a643f267a111c1f2e8d95
             echo "\">";
             echo twig_escape_filter($this->env, $context["employe"], "html", null, true);
             echo "</a> <br>
+        <a class=\"btn btn-warning\" href=\"";
+            // line 15
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit_employe", ["id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", [], "any", false, false, false, 15)]), "html", null, true);
+            echo "\">Edit</a> <br>
     ";
         }
         $_parent = $context['_parent'];
@@ -132,7 +136,7 @@ class __TwigTemplate_cf1757ba0b5cc159f78e4d3b3cba1286db5317a643f267a111c1f2e8d95
 
     public function getDebugInfo()
     {
-        return array (  105 => 14,  101 => 13,  96 => 11,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  112 => 15,  105 => 14,  101 => 13,  96 => 11,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -151,6 +155,7 @@ class __TwigTemplate_cf1757ba0b5cc159f78e4d3b3cba1286db5317a643f267a111c1f2e8d95
 
     {% for employe in employes %}
        <a href=\"{{ path('show_employe', {'id' : employe.id}) }}\">{{ employe }}</a> <br>
+        <a class=\"btn btn-warning\" href=\"{{ path('edit_employe', {'id':employe.id}) }}\">Edit</a> <br>
     {% endfor %}
 {% endblock %}
 ", "employe/index.html.twig", "C:\\laragon\\www\\SfEntreprise\\templates\\employe\\index.html.twig");

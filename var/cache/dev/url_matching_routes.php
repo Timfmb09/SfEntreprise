@@ -21,36 +21,44 @@ return [
     [ // $regexpList
         0 => '{^(?'
                 .'|/e(?'
-                    .'|mploye/([^/]++)(*:27)'
-                    .'|ntreprise/([^/]++)(*:52)'
+                    .'|mploye/([^/]++)(?'
+                        .'|/edit(*:35)'
+                        .'|(*:42)'
+                    .')'
+                    .'|ntreprise/([^/]++)(?'
+                        .'|/edit(*:76)'
+                        .'|(*:83)'
+                    .')'
                 .')'
                 .'|/_(?'
-                    .'|error/(\\d+)(?:\\.([^/]++))?(*:91)'
-                    .'|wdt/([^/]++)(*:110)'
+                    .'|error/(\\d+)(?:\\.([^/]++))?(*:123)'
+                    .'|wdt/([^/]++)(*:143)'
                     .'|profiler/([^/]++)(?'
                         .'|/(?'
-                            .'|search/results(*:156)'
-                            .'|router(*:170)'
+                            .'|search/results(*:189)'
+                            .'|router(*:203)'
                             .'|exception(?'
-                                .'|(*:190)'
-                                .'|\\.css(*:203)'
+                                .'|(*:223)'
+                                .'|\\.css(*:236)'
                             .')'
                         .')'
-                        .'|(*:213)'
+                        .'|(*:246)'
                     .')'
                 .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
-        27 => [[['_route' => 'show_employe', '_controller' => 'App\\Controller\\EmployeController::show'], ['id'], null, null, false, true, null]],
-        52 => [[['_route' => 'show_entreprise', '_controller' => 'App\\Controller\\EntrepriseController::show'], ['id'], null, null, false, true, null]],
-        91 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
-        110 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
-        156 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
-        170 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
-        190 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
-        203 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
-        213 => [
+        35 => [[['_route' => 'edit_employe', '_controller' => 'App\\Controller\\EmployeController::add'], ['id'], null, null, false, false, null]],
+        42 => [[['_route' => 'show_employe', '_controller' => 'App\\Controller\\EmployeController::show'], ['id'], null, null, false, true, null]],
+        76 => [[['_route' => 'edit_entreprise', '_controller' => 'App\\Controller\\EntrepriseController::add'], ['id'], null, null, false, false, null]],
+        83 => [[['_route' => 'show_entreprise', '_controller' => 'App\\Controller\\EntrepriseController::show'], ['id'], null, null, false, true, null]],
+        123 => [[['_route' => '_preview_error', '_controller' => 'error_controller::preview', '_format' => 'html'], ['code', '_format'], null, null, false, true, null]],
+        143 => [[['_route' => '_wdt', '_controller' => 'web_profiler.controller.profiler::toolbarAction'], ['token'], null, null, false, true, null]],
+        189 => [[['_route' => '_profiler_search_results', '_controller' => 'web_profiler.controller.profiler::searchResultsAction'], ['token'], null, null, false, false, null]],
+        203 => [[['_route' => '_profiler_router', '_controller' => 'web_profiler.controller.router::panelAction'], ['token'], null, null, false, false, null]],
+        223 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
+        236 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
+        246 => [
             [['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

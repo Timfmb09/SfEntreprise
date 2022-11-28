@@ -110,9 +110,13 @@ class __TwigTemplate_b61e9c8eb64725328fb45388a20c59b2dc190fc378fe9f3b908a724a3a6
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_entreprise", ["id" => twig_get_attribute($this->env, $this->source, $context["entreprise"], "id", [], "any", false, false, false, 18)]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $context["entreprise"], "html", null, true);
-            echo "</a> <br>
+            echo "</a> 
+        <a class=\"btn btn-warning\" href=\"";
+            // line 19
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("edit_entreprise", ["id" => twig_get_attribute($this->env, $this->source, $context["entreprise"], "id", [], "any", false, false, false, 19)]), "html", null, true);
+            echo "\">Edit</a> <br>
     ";
-            // line 20
+            // line 21
             echo "    ";
         }
         $_parent = $context['_parent'];
@@ -138,7 +142,7 @@ class __TwigTemplate_b61e9c8eb64725328fb45388a20c59b2dc190fc378fe9f3b908a724a3a6
 
     public function getDebugInfo()
     {
-        return array (  116 => 20,  110 => 18,  107 => 17,  105 => 14,  101 => 13,  98 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  120 => 21,  116 => 19,  110 => 18,  107 => 17,  105 => 14,  101 => 13,  98 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -160,7 +164,8 @@ class __TwigTemplate_b61e9c8eb64725328fb45388a20c59b2dc190fc378fe9f3b908a724a3a6
 
         {{ entreprise.raisonSociale}} {{entreprise.cp}} {{ entreprise.ville}} <br> #}
 
-        <a href=\"{{ path('show_entreprise', {'id':entreprise.id}) }}\">{{ entreprise }}</a> <br>
+        <a href=\"{{ path('show_entreprise', {'id':entreprise.id}) }}\">{{ entreprise }}</a> 
+        <a class=\"btn btn-warning\" href=\"{{ path('edit_entreprise', {'id':entreprise.id}) }}\">Edit</a> <br>
     {# {{ dump(entreprises) }} #}
     {% endfor %}
 {% endblock %}

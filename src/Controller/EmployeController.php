@@ -28,10 +28,16 @@ class EmployeController extends AbstractController
 
     /**
      * @Route("/employe/add", name="add_employe")
+     * @Route("/employe/{id}/edit", name="edit_employe")
+     * @Route("/employe/{id}/delete", name="delete_employe")
      */
 
     public function add(ManagerRegistry $doctrine, Employe $employe = null, Request $request): Response {
         
+        if(!$employe) {
+            $employe = new Employe();
+        }
+
         $form = $this->createForm(EmployeType::class, $employe);
         $form->handleRequest($request);
 
