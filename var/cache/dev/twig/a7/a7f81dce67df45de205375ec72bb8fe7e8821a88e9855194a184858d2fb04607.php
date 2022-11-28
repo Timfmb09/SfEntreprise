@@ -91,7 +91,7 @@ class __TwigTemplate_b61e9c8eb64725328fb45388a20c59b2dc190fc378fe9f3b908a724a3a6
     <a class=\"btn btn-primary\" href=\"";
         // line 9
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_entreprise");
-        echo "\">Ajouter une entreprise</a>
+        echo "\">Ajouter une entreprise</a><br>
 
     ";
         // line 12
@@ -151,7 +151,7 @@ class __TwigTemplate_b61e9c8eb64725328fb45388a20c59b2dc190fc378fe9f3b908a724a3a6
 
     <h1>Liste des entreprises</h1>
 
-    <a class=\"btn btn-primary\" href=\"{{ path('add_entreprise') }}\">Ajouter une entreprise</a>
+    <a class=\"btn btn-primary\" href=\"{{ path('add_entreprise') }}\">Ajouter une entreprise</a><br>
 
     {# {{ dump(entreprises) }} #}
 

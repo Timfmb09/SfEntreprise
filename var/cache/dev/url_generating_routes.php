@@ -4,6 +4,7 @@
 
 return [
     'app_employe' => [[], ['_controller' => 'App\\Controller\\EmployeController::index'], [], [['text', '/employe']], [], [], []],
+    'add_employe' => [[], ['_controller' => 'App\\Controller\\EmployeController::add'], [], [['text', '/employe/add']], [], [], []],
     'show_employe' => [['id'], ['_controller' => 'App\\Controller\\EmployeController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/employe']], [], [], []],
     'app_entreprise' => [[], ['_controller' => 'App\\Controller\\EntrepriseController::index'], [], [['text', '/entreprise']], [], [], []],
     'add_entreprise' => [[], ['_controller' => 'App\\Controller\\EntrepriseController::add'], [], [['text', '/entreprise/add']], [], [], []],

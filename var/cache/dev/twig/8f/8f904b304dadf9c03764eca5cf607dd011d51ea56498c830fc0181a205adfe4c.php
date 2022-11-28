@@ -65,7 +65,7 @@ class __TwigTemplate_cf1757ba0b5cc159f78e4d3b3cba1286db5317a643f267a111c1f2e8d95
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Employés";
+        echo "Employes";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -91,14 +91,19 @@ class __TwigTemplate_cf1757ba0b5cc159f78e4d3b3cba1286db5317a643f267a111c1f2e8d95
         echo "
     <h1>Liste des employés</h1>
 
-    ";
+    <a class=\"btn btn-primary\" href=\"";
         // line 11
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_employe");
+        echo "\">Ajouter un employé</a><br>
+
+    ";
+        // line 13
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["employes"]) || array_key_exists("employes", $context) ? $context["employes"] : (function () { throw new RuntimeError('Variable "employes" does not exist.', 11, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["employes"]) || array_key_exists("employes", $context) ? $context["employes"] : (function () { throw new RuntimeError('Variable "employes" does not exist.', 13, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["employe"]) {
-            // line 12
+            // line 14
             echo "       <a href=\"";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_employe", ["id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", [], "any", false, false, false, 12)]), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_employe", ["id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", [], "any", false, false, false, 14)]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $context["employe"], "html", null, true);
             echo "</a> <br>
@@ -127,20 +132,22 @@ class __TwigTemplate_cf1757ba0b5cc159f78e4d3b3cba1286db5317a643f267a111c1f2e8d95
 
     public function getDebugInfo()
     {
-        return array (  100 => 12,  96 => 11,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  105 => 14,  101 => 13,  96 => 11,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Employés{% endblock %}
+{% block title %}Employes{% endblock %}
 
 {% block body %}
 
 {# {{ dump(employes) }} #}
 
     <h1>Liste des employés</h1>
+
+    <a class=\"btn btn-primary\" href=\"{{ path('add_employe') }}\">Ajouter un employé</a><br>
 
     {% for employe in employes %}
        <a href=\"{{ path('show_employe', {'id' : employe.id}) }}\">{{ employe }}</a> <br>
