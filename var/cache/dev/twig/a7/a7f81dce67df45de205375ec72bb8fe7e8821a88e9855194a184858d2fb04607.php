@@ -88,26 +88,31 @@ class __TwigTemplate_b61e9c8eb64725328fb45388a20c59b2dc190fc378fe9f3b908a724a3a6
         echo "
     <h1>Liste des entreprises</h1>
 
+    <a class=\"btn btn-primary\" href=\"";
+        // line 9
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("add_entreprise");
+        echo "\">Ajouter une entreprise</a>
+
     ";
-        // line 10
+        // line 12
         echo "
     ";
-        // line 11
+        // line 13
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["entreprises"]) || array_key_exists("entreprises", $context) ? $context["entreprises"] : (function () { throw new RuntimeError('Variable "entreprises" does not exist.', 11, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["entreprises"]) || array_key_exists("entreprises", $context) ? $context["entreprises"] : (function () { throw new RuntimeError('Variable "entreprises" does not exist.', 13, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["entreprise"]) {
-            // line 12
+            // line 14
             echo "        ";
-            // line 15
+            // line 17
             echo "
         <a href=\"";
-            // line 16
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_entreprise", ["id" => twig_get_attribute($this->env, $this->source, $context["entreprise"], "id", [], "any", false, false, false, 16)]), "html", null, true);
+            // line 18
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_entreprise", ["id" => twig_get_attribute($this->env, $this->source, $context["entreprise"], "id", [], "any", false, false, false, 18)]), "html", null, true);
             echo "\">";
             echo twig_escape_filter($this->env, $context["entreprise"], "html", null, true);
             echo "</a> <br>
     ";
-            // line 18
+            // line 20
             echo "    ";
         }
         $_parent = $context['_parent'];
@@ -133,7 +138,7 @@ class __TwigTemplate_b61e9c8eb64725328fb45388a20c59b2dc190fc378fe9f3b908a724a3a6
 
     public function getDebugInfo()
     {
-        return array (  111 => 18,  105 => 16,  102 => 15,  100 => 12,  96 => 11,  93 => 10,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  116 => 20,  110 => 18,  107 => 17,  105 => 14,  101 => 13,  98 => 12,  93 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -145,6 +150,8 @@ class __TwigTemplate_b61e9c8eb64725328fb45388a20c59b2dc190fc378fe9f3b908a724a3a6
 {% block body %}
 
     <h1>Liste des entreprises</h1>
+
+    <a class=\"btn btn-primary\" href=\"{{ path('add_entreprise') }}\">Ajouter une entreprise</a>
 
     {# {{ dump(entreprises) }} #}
 
