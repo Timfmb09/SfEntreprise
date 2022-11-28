@@ -32,7 +32,7 @@ class Entreprise
     /**
      * @ORM\Column(type="string", length=100)
      */
-    private $adress;
+    private $adresse;
 
     /**
      * @ORM\Column(type="string", length=10)
@@ -48,6 +48,11 @@ class Entreprise
      * @ORM\OneToMany(targetEntity=Employe::class, mappedBy="entreprise", orphanRemoval=true)
      */
     private $employes;
+
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $siret;
 
     public function __construct()
     {
@@ -83,14 +88,14 @@ class Entreprise
         return $this;
     }
 
-    public function getAdress(): ?string
+    public function getAdresse(): ?string
     {
-        return $this->adress;
+        return $this->adresse;
     }
 
-    public function setAdress(string $adress): self
+    public function setAdresse(string $adresse): self
     {
-        $this->adress = $adress;
+        $this->adresse = $adresse;
 
         return $this;
     }
@@ -117,6 +122,11 @@ class Entreprise
         $this->ville = $ville;
 
         return $this;
+    }
+
+    public function getFullAdresse() {
+
+        return $this->adresse." ".$this->cp." ".$this->ville;
     }
 
     /**
@@ -152,5 +162,17 @@ class Entreprise
     public function __toString()
     {
         return $this->raisonSociale;
+    }
+
+    public function getSiret(): ?string
+    {
+        return $this->siret;
+    }
+
+    public function setSiret(string $siret): self
+    {
+        $this->siret = $siret;
+
+        return $this;
     }
 }

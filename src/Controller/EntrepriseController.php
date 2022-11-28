@@ -27,7 +27,7 @@ class EntrepriseController extends AbstractController
      */
     public function show(): Response
     {
-        $entreprise = "";
+        $entreprise= "";
         return $this->render('entreprise/show.html.twig', [
             'entreprise' =>$entreprise
          ]);
