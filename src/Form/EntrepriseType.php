@@ -18,6 +18,7 @@ class EntrepriseType extends AbstractType
             ->add('cp')
             ->add('ville')
             ->add('siret')
+            ->add('submit')
         ;
     }
 
