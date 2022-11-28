@@ -104,7 +104,7 @@ class __TwigTemplate_6a189a0b10d88d3e2850c871b850db515d9c63265d9c33b886c0b87eb98
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAddEmploye"]) || array_key_exists("formAddEmploye", $context) ? $context["formAddEmploye"] : (function () { throw new RuntimeError('Variable "formAddEmploye" does not exist.', 13, $this->source); })()), 'form_start');
         echo "
 
-        <div class='nomPrenom'>
+        <div class=\"nomPrenom\">
             ";
         // line 16
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["formAddEmploye"]) || array_key_exists("formAddEmploye", $context) ? $context["formAddEmploye"] : (function () { throw new RuntimeError('Variable "formAddEmploye" does not exist.', 16, $this->source); })()), "prenom", [], "any", false, false, false, 16), 'row');
@@ -182,7 +182,7 @@ class __TwigTemplate_6a189a0b10d88d3e2850c871b850db515d9c63265d9c33b886c0b87eb98
 
     {{ form_start(formAddEmploye) }}
 
-        <div class='nomPrenom'>
+        <div class=\"nomPrenom\">
             {{ form_row(formAddEmploye.prenom) }}
             {{ form_row(formAddEmploye.nom) }}
         </div>
