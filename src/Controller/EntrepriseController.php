@@ -53,7 +53,7 @@ class EntrepriseController extends AbstractController
         //Vue pour afficher mon formulaire d'ajout
         return $this->render('entreprise/add.html.twig', [
             'formAddEntreprise' => $form->createView(),
-            
+            'edit' => $entreprise->getId()
         ]);
 
     }
@@ -77,7 +77,8 @@ class EntrepriseController extends AbstractController
     public function show(Entreprise $entreprise): Response
     {
         return $this->render('entreprise/show.html.twig', [
-            'entreprise' =>$entreprise
+            'entreprise' =>$entreprise,
+            
          ]);
 
     }
