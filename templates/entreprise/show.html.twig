@@ -18,7 +18,7 @@
             <p>Pas d'employés dans cette entreprise</p>
         {% else %}
             {% for employe in entreprise.employes %}
-                {{ employe }} <br>
+                <a href="{{ path('show_employe', {'id':employe.id}) }}">{{ employe }}</a> <br>
         {% endfor %}
        {% endif %}
        

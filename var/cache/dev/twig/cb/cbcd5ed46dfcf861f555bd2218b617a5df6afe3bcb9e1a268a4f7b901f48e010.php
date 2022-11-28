@@ -96,14 +96,22 @@ class __TwigTemplate_4660f366b19512b2d911bcb758500b5399c05ef9d8122c67b67ec75c12c
         // line 10
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new RuntimeError('Variable "employe" does not exist.', 10, $this->source); })()), "ville", [], "any", false, false, false, 10), "html", null, true);
         echo " <br>
-        Entreprise : ";
+        Entreprise : <a href=\"";
         // line 11
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_entreprise", ["id" => twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new RuntimeError('Variable "employe" does not exist.', 11, $this->source); })()), "entreprise", [], "any", false, false, false, 11), "id", [], "any", false, false, false, 11)]), "html", null, true);
+        echo "\">";
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new RuntimeError('Variable "employe" does not exist.', 11, $this->source); })()), "entreprise", [], "any", false, false, false, 11), "html", null, true);
+        echo "</a> <br>
+        Date d'embauche : ";
+        // line 12
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new RuntimeError('Variable "employe" does not exist.', 12, $this->source); })()), "dateEmbauche", [], "any", false, false, false, 12), "d/m/Y"), "html", null, true);
         echo " <br>
         Date de naissance : ";
-        // line 12
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new RuntimeError('Variable "employe" does not exist.', 12, $this->source); })()), "dateNaissance", [], "any", false, false, false, 12), "d/m/Y"), "html", null, true);
-        echo " 
+        // line 13
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new RuntimeError('Variable "employe" does not exist.', 13, $this->source); })()), "dateNaissance", [], "any", false, false, false, 13), "d/m/Y"), "html", null, true);
+        echo " (";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["employe"]) || array_key_exists("employe", $context) ? $context["employe"] : (function () { throw new RuntimeError('Variable "employe" does not exist.', 13, $this->source); })()), "age", [], "any", false, false, false, 13), "html", null, true);
+        echo " ans) <br>
     </p>
     
 ";
@@ -127,7 +135,7 @@ class __TwigTemplate_4660f366b19512b2d911bcb758500b5399c05ef9d8122c67b67ec75c12c
 
     public function getDebugInfo()
     {
-        return array (  105 => 12,  101 => 11,  97 => 10,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  111 => 13,  107 => 12,  101 => 11,  97 => 10,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -142,8 +150,9 @@ class __TwigTemplate_4660f366b19512b2d911bcb758500b5399c05ef9d8122c67b67ec75c12c
     <h1>{{ employe }}</h1>
     <p>
         Ville : {{ employe.ville }} <br>
-        Entreprise : {{ employe.entreprise }} <br>
-        Date de naissance : {{ employe.dateNaissance | date('d/m/Y') }} 
+        Entreprise : <a href=\"{{ path('show_entreprise', {'id':employe.entreprise.id})}}\">{{ employe.entreprise }}</a> <br>
+        Date d'embauche : {{ employe.dateEmbauche | date('d/m/Y') }} <br>
+        Date de naissance : {{ employe.dateNaissance | date('d/m/Y') }} ({{ employe.age}} ans) <br>
     </p>
     
 {% endblock %}", "employe/show.html.twig", "C:\\laragon\\www\\SfEntreprise\\templates\\employe\\show.html.twig");

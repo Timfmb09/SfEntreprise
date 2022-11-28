@@ -122,9 +122,11 @@ class __TwigTemplate_3ad07a5f6f9b7db60337d0d42b719c6a277e530b148b2f80f7e61756e96
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 20, $this->source); })()), "employes", [], "any", false, false, false, 20));
             foreach ($context['_seq'] as $context["_key"] => $context["employe"]) {
                 // line 21
-                echo "                ";
+                echo "                <a href=\"";
+                echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("show_employe", ["id" => twig_get_attribute($this->env, $this->source, $context["employe"], "id", [], "any", false, false, false, 21)]), "html", null, true);
+                echo "\">";
                 echo twig_escape_filter($this->env, $context["employe"], "html", null, true);
-                echo " <br>
+                echo "</a> <br>
         ";
             }
             $_parent = $context['_parent'];
@@ -156,7 +158,7 @@ class __TwigTemplate_3ad07a5f6f9b7db60337d0d42b719c6a277e530b148b2f80f7e61756e96
 
     public function getDebugInfo()
     {
-        return array (  137 => 24,  134 => 23,  125 => 21,  120 => 20,  116 => 18,  114 => 17,  107 => 13,  103 => 12,  99 => 11,  94 => 9,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  139 => 24,  136 => 23,  125 => 21,  120 => 20,  116 => 18,  114 => 17,  107 => 13,  103 => 12,  99 => 11,  94 => 9,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -181,7 +183,7 @@ class __TwigTemplate_3ad07a5f6f9b7db60337d0d42b719c6a277e530b148b2f80f7e61756e96
             <p>Pas d'employés dans cette entreprise</p>
         {% else %}
             {% for employe in entreprise.employes %}
-                {{ employe }} <br>
+                <a href=\"{{ path('show_employe', {'id':employe.id}) }}\">{{ employe }}</a> <br>
         {% endfor %}
        {% endif %}
        
