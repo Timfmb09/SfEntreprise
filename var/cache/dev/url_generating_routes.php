@@ -6,6 +6,7 @@ return [
     'app_employe' => [[], ['_controller' => 'App\\Controller\\EmployeController::index'], [], [['text', '/employe']], [], [], []],
     'show_employe' => [['id'], ['_controller' => 'App\\Controller\\EmployeController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/employe']], [], [], []],
     'app_entreprise' => [[], ['_controller' => 'App\\Controller\\EntrepriseController::index'], [], [['text', '/entreprise']], [], [], []],
+    'add_entreprise' => [[], ['_controller' => 'App\\Controller\\EntrepriseController::add'], [], [['text', '/entreprise/add']], [], [], []],
     'show_entreprise' => [['id'], ['_controller' => 'App\\Controller\\EntrepriseController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/entreprise']], [], [], []],
     '_preview_error' => [['code', '_format'], ['_controller' => 'error_controller::preview', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], [], []],
     '_wdt' => [['token'], ['_controller' => 'web_profiler.controller.profiler::toolbarAction'], [], [['variable', '/', '[^/]++', 'token', true], ['text', '/_wdt']], [], [], []],
