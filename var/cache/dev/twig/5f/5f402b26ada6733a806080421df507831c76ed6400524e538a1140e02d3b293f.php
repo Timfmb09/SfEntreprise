@@ -85,11 +85,24 @@ class __TwigTemplate_99a909c60f0841e356ec3760cda200bd034372f8213fa9adce1cc6f1df1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Ajouter une entreprise</h1>
+        echo "
+    ";
+        // line 7
+        if ((isset($context["edit"]) || array_key_exists("edit", $context) ? $context["edit"] : (function () { throw new RuntimeError('Variable "edit" does not exist.', 7, $this->source); })())) {
+            // line 8
+            echo "        <h1>Editer une entreprise</h1>
+    ";
+        } else {
+            // line 10
+            echo "        <h1>Ajouter une entreprise</h1>
+    ";
+        }
+        // line 12
+        echo "    
 
     ";
-        // line 8
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAddEntreprise"]) || array_key_exists("formAddEntreprise", $context) ? $context["formAddEntreprise"] : (function () { throw new RuntimeError('Variable "formAddEntreprise" does not exist.', 8, $this->source); })()), 'form');
+        // line 14
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAddEntreprise"]) || array_key_exists("formAddEntreprise", $context) ? $context["formAddEntreprise"] : (function () { throw new RuntimeError('Variable "formAddEntreprise" does not exist.', 14, $this->source); })()), 'form');
         echo "
 
 ";
@@ -113,7 +126,7 @@ class __TwigTemplate_99a909c60f0841e356ec3760cda200bd034372f8213fa9adce1cc6f1df1
 
     public function getDebugInfo()
     {
-        return array (  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  105 => 14,  101 => 12,  97 => 10,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -123,7 +136,13 @@ class __TwigTemplate_99a909c60f0841e356ec3760cda200bd034372f8213fa9adce1cc6f1df1
 {% block title %}Ajouter une entreprise{% endblock %}
 
 {% block body %}
-    <h1>Ajouter une entreprise</h1>
+
+    {% if edit %}
+        <h1>Editer une entreprise</h1>
+    {% else %}
+        <h1>Ajouter une entreprise</h1>
+    {% endif %}
+    
 
     {{ form(formAddEntreprise) }}
 

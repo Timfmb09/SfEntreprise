@@ -85,11 +85,19 @@ class __TwigTemplate_6a189a0b10d88d3e2850c871b850db515d9c63265d9c33b886c0b87eb98
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <h1>Ajouter un employé</h1>
-
+        echo "   ";
+        if ((isset($context["edit"]) || array_key_exists("edit", $context) ? $context["edit"] : (function () { throw new RuntimeError('Variable "edit" does not exist.', 6, $this->source); })())) {
+            // line 7
+            echo "        <h1>Editer un employé</h1>
     ";
-        // line 8
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAddEmploye"]) || array_key_exists("formAddEmploye", $context) ? $context["formAddEmploye"] : (function () { throw new RuntimeError('Variable "formAddEmploye" does not exist.', 8, $this->source); })()), 'form');
+        } else {
+            // line 9
+            echo "        <h1>Ajouter un employé</h1>
+    ";
+        }
+        // line 11
+        echo "    ";
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["formAddEmploye"]) || array_key_exists("formAddEmploye", $context) ? $context["formAddEmploye"] : (function () { throw new RuntimeError('Variable "formAddEmploye" does not exist.', 11, $this->source); })()), 'form');
         echo "
 
 ";
@@ -113,7 +121,7 @@ class __TwigTemplate_6a189a0b10d88d3e2850c871b850db515d9c63265d9c33b886c0b87eb98
 
     public function getDebugInfo()
     {
-        return array (  92 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  99 => 11,  95 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -123,8 +131,11 @@ class __TwigTemplate_6a189a0b10d88d3e2850c871b850db515d9c63265d9c33b886c0b87eb98
 {% block title %}ée{% endblock %}
 
 {% block body %}
-    <h1>Ajouter un employé</h1>
-
+   {% if edit %}
+        <h1>Editer un employé</h1>
+    {% else %}
+        <h1>Ajouter un employé</h1>
+    {% endif %}
     {{ form(formAddEmploye) }}
 
 {% endblock %}", "employe/add.html.twig", "C:\\laragon\\www\\SfEntreprise\\templates\\employe\\add.html.twig");
