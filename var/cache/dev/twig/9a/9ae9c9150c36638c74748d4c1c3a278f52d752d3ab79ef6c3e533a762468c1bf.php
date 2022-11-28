@@ -88,41 +88,52 @@ class __TwigTemplate_3ad07a5f6f9b7db60337d0d42b719c6a277e530b148b2f80f7e61756e96
         echo "
 ";
         // line 8
-        echo "    <h1>";
-        echo twig_escape_filter($this->env, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 8, $this->source); })()), "html", null, true);
+        echo "
+    <h1>";
+        // line 9
+        echo twig_escape_filter($this->env, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 9, $this->source); })()), "html", null, true);
         echo "</h1>
     <p>
         SIRET : ";
-        // line 10
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 10, $this->source); })()), "siret", [], "any", false, false, false, 10), "html", null, true);
+        // line 11
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 11, $this->source); })()), "siret", [], "any", false, false, false, 11), "html", null, true);
         echo " <br>
         Date de création : ";
-        // line 11
-        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 11, $this->source); })()), "dateCreation", [], "any", false, false, false, 11), "d-m-Y"), "html", null, true);
+        // line 12
+        echo twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 12, $this->source); })()), "dateCreation", [], "any", false, false, false, 12), "d-m-Y"), "html", null, true);
         echo " <br>
         Adresse : ";
-        // line 12
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 12, $this->source); })()), "fullAdresse", [], "any", false, false, false, 12), "html", null, true);
+        // line 13
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 13, $this->source); })()), "fullAdresse", [], "any", false, false, false, 13), "html", null, true);
         echo " <br>
     </p>
 
     <h2>Liste des employés</h2>
-    ";
-        // line 16
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 16, $this->source); })()), "employes", [], "any", false, false, false, 16));
-        foreach ($context['_seq'] as $context["_key"] => $context["employe"]) {
-            // line 17
-            echo "        ";
-            echo twig_escape_filter($this->env, $context["employe"], "html", null, true);
-            echo " <br>
-        
-    ";
+        ";
+        // line 17
+        if ((0 === twig_compare(twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 17, $this->source); })()), "employes", [], "any", false, false, false, 17)), 0))) {
+            // line 18
+            echo "            <p>Pas d'employés dans cette entreprise</p>
+        ";
+        } else {
+            // line 20
+            echo "            ";
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["entreprise"]) || array_key_exists("entreprise", $context) ? $context["entreprise"] : (function () { throw new RuntimeError('Variable "entreprise" does not exist.', 20, $this->source); })()), "employes", [], "any", false, false, false, 20));
+            foreach ($context['_seq'] as $context["_key"] => $context["employe"]) {
+                // line 21
+                echo "                ";
+                echo twig_escape_filter($this->env, $context["employe"], "html", null, true);
+                echo " <br>
+        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['employe'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 23
+            echo "       ";
         }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['employe'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
+        // line 24
         echo "       
 ";
         
@@ -145,7 +156,7 @@ class __TwigTemplate_3ad07a5f6f9b7db60337d0d42b719c6a277e530b148b2f80f7e61756e96
 
     public function getDebugInfo()
     {
-        return array (  126 => 20,  116 => 17,  112 => 16,  105 => 12,  101 => 11,  97 => 10,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  137 => 24,  134 => 23,  125 => 21,  120 => 20,  116 => 18,  114 => 17,  107 => 13,  103 => 12,  99 => 11,  94 => 9,  91 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -156,7 +167,8 @@ class __TwigTemplate_3ad07a5f6f9b7db60337d0d42b719c6a277e530b148b2f80f7e61756e96
 
 {% block body %}
 
-{# {{ dump(employes) }} #}
+{# {{ dump(entreprise) }} #}
+
     <h1>{{ entreprise }}</h1>
     <p>
         SIRET : {{ entreprise.siret }} <br>
@@ -165,10 +177,13 @@ class __TwigTemplate_3ad07a5f6f9b7db60337d0d42b719c6a277e530b148b2f80f7e61756e96
     </p>
 
     <h2>Liste des employés</h2>
-    {% for employe in entreprise.employes %}
-        {{ employe }} <br>
-        
-    {% endfor %}
+        {% if entreprise.employes | length == 0 %}
+            <p>Pas d'employés dans cette entreprise</p>
+        {% else %}
+            {% for employe in entreprise.employes %}
+                {{ employe }} <br>
+        {% endfor %}
+       {% endif %}
        
 {% endblock %}", "entreprise/show.html.twig", "C:\\laragon\\www\\SfEntreprise\\templates\\entreprise\\show.html.twig");
     }
