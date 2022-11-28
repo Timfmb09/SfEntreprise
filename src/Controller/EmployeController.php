@@ -29,7 +29,6 @@ class EmployeController extends AbstractController
     /**
      * @Route("/employe/add", name="add_employe")
      * @Route("/employe/{id}/edit", name="edit_employe")
-     * @Route("/employe/{id}/delete", name="delete_employe")
      */
 
     public function add(ManagerRegistry $doctrine, Employe $employe = null, Request $request): Response {
@@ -59,6 +58,20 @@ class EmployeController extends AbstractController
         ]);
 
     }
+
+    /**
+    * @Route("/employe/{id}/delete", name="delete_employe")
+    */
+    public function delete(ManagerRegistry $doctrine, Employe $employe) : Response 
+    {
+        $entityManager = $doctrine-> getManager();
+        $entityManager -> remove($employe);
+        $entityManager -> flush();
+
+        return $this->redirectToRoute('app_employe');
+
+    }
+
      /**
      * @Route("/employe/{id}", name="show_employe")
      */
